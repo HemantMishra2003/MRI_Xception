@@ -79,28 +79,37 @@ __________________________________________
   ### Training , Validation Loss Curves : 
 _____________________________________
     
-Loss 
-0.60 |
-0.55 | \
-0.50 |  \
-0.45 |\  \
-0.40 | \  \
-0.35 |  \  \
-0.30 |   \  \
-0.25 |    \  \
-0.20 |     \  \
-0.15 |      \  \
-0.10 |       \  \___________ Validation ≈0.10
-0.03 |        \__________________________ Train ≈0.03
-0.05 |
-     +------------------------------------------------
-       1   3   5   7   9   11  13  15  17  19
+    Loss 
+    0.60 |
+    0.55 | \
+    0.50 |  \
+    0.45 |\  \
+    0.40 | \  \
+    0.35 |  \  \
+    0.30 |   \  \
+    0.25 |    \  \
+    0.20 |     \  \
+    0.10 |       \  \___________ Validation ≈0.10
+    0.03 |        \__________________________ Train ≈0.03
+    0.05 |
+         +------------------------------------------------
+         1   3   5   7   9   11  13  15  17  19
+                              Epochs
+                              
+### Classification Report Validation  Data
 
-                          Epochs
+| Class        | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Glioma       | 0.98      | 0.99   | 0.98     | 264     |
+| Meningioma   | 0.94      | 0.98   | 0.96     | 267     |
+| No Tumor     | 0.98      | 0.92   | 0.95     | 319     |
+| Pituitary    | 0.97      | 0.98   | 0.98     | 291     |
+| **Accuracy** |           |        | **0.97** | **1141**|
 
                          
-   ### Confusion Matrix  of Test Data
-_______________________________________
+ ### Confusion Matrix  of Validation Data 
+  _______________________________________
+
 
                           P R E D I C T E D
     ______________________________________________________________________
@@ -115,25 +124,46 @@ _______________________________________
     Actual  | Pituitary   |      0      |      4     |      1     |   286
     ______________________________________________________________________
 
+## Confusion Matrix Simlification : 
+________________________________________
 
+    Actual ↓         Predicted ↓
+    ------------    ----------------------
+    Glioma        →   261 correct, 3 wrong
+    Meningioma    →   262 correct, 5 wrong
+    No Tumor      →   295 correct, 24 wrong
+    Pituitary     →   286 correct, 5 wrong
+    
+# Test Performance
+__________________________
 
 ## Test Set Performance (Unseen Data)
 _________________________________________
 
-### - **Test Accuracy:** **98.93%**
-##  - **Test Precision:** **98.93%**
-Test Recall   : 98.93%
+### - **Test Accuracy** : **98.93%**
+###  - **Test Precision**: **98.93%**
+### - **Test Recall**   : **98.93%**
 
-#### Classification Report (Test Data)
+## Test Set Performance Classification Report 
 
+| Class        | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Glioma       | 1.0000    | 0.9967 | 0.9983   | 300     |
+| Meningioma   | 0.9935    | 0.9967 | 0.9951   | 306     |
+| No Tumor     | 1.0000    | 1.0000 | 1.0000   | 405     |
+| Pituitary    | 0.9967    | 0.9967 | 0.9967   | 300     |
 
-| Class        | Precision | Recall  | F1-Score | Support |
-|--------------|-----------|---------|----------|---------|
-| Glioma       | 0.8746    | 0.8133  | 0.8428   | 300     |
-| Meningioma   | 0.7801    | 0.7418  | 0.7605   | 306     |
-| No Tumor     | 0.9357    | 0.9704  | 0.9527   | 405     |
-| Pituitary    | 0.8816    | 0.9433  | 0.9114   | 300     |
+### TEST CONFUSION MATRIX
 
+                             Predicted
+                    ┌──────────┬────────────┬──────────┬────────────┐
+     Actual         │ Glioma   │ Meningioma │ No Tumor │ Pituitary  │
+     ───────────────┼──────────┼────────────┼──────────┼────────────┤
+     Glioma         │   299    │     1      │    0     │     0      │
+     Meningioma     │    0     │   305      │    0     │     1      │
+     No Tumor       │    0     │     0      │   405    │     0      │
+     Pituitary      │    0     │     1      │    0     │   299      │
+     ───────────────┴──────────┴────────────┴──────────┴────────────┘
 
 
 ### Recall Value – Medical Interpretation (MRI Brain Tumor Detection)
