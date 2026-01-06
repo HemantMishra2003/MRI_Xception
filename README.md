@@ -124,8 +124,8 @@ _____________________________________
     Actual  | Pituitary   |      0      |      4     |      1     |   286
     ______________________________________________________________________
 
-## Confusion Matrix Simlification : 
-________________________________________
+### Validation Confusion Matrix Simlification : 
+ ________________________________________
 
     Actual ↓         Predicted ↓
     ------------    ----------------------
@@ -133,9 +133,11 @@ ________________________________________
     Meningioma    →   262 correct, 5 wrong
     No Tumor      →   295 correct, 24 wrong
     Pituitary     →   286 correct, 5 wrong
+
     
 # Test Performance
 __________________________
+
 
 ## Test Set Performance (Unseen Data)
 _________________________________________
@@ -165,33 +167,43 @@ _________________________________________
      Pituitary      │    0     │     1      │    0     │   299      │
      ───────────────┴──────────┴────────────┴──────────┴────────────┘
 
+### Test  Confusion Matrix Simlification : 
+________________________________________
+
+Actual ↓              Predicted ↓
+--------------    ----------------------
+Glioma        →   299 correct, 1 wrong
+Meningioma    →   305 correct, 1 wrong
+No Tumor      →   405 correct, 0 wrong
+Pituitary     →   299 correct, 1 wrong
+
 
 ### Recall Value – Medical Interpretation (MRI Brain Tumor Detection)
 _______________________________________________________________________
 
-      This model demonstrates strong recall performance 
-      across all MRI brain tumor classes,with Glioma recall of 81.33%,
-      with Glioma recall of 81.33%, Meningioma recall of 74.18%.
+    This model demonstrates strong recall performance
+    across all MRI brain tumor classes, with Glioma recall of 99.67%,
+    Meningioma recall of 99.67%, No Tumor recall of 100.00%,
+    and Pituitary tumor recall of 99.67%.
 
+    The consistently high recall for tumor-positive classes,
+    particularly Pituitary (99.67%), Meningioma (99.67%),
+    and Glioma (99.67%), indicates that the model is highly sensitive
+    toward detecting abnormal brain structures in MRI scans.
 
-      No Tumor recall of 97.04%, and Pituitary tumor recall of 94.33%.
-      The high recall for Tumor-Positive classes, particularly Pituitary(94.33%)
-      and Glioma (81.33%), indicates that the model is highly sensitive
-      toward detecting abnormal brain structures in MRI scans.
+    In medical screening and radiological diagnostics,
+    Recall is critically important, as missing a brain tumor
+    (false negative) can delay treatment and significantly
+    impact patient outcomes.
 
+    Although an ideal Recall value is close to 100%,
+    achieving perfect Recall in MRI-based tumor detection
+    is challenging due to tumor morphology variations,
+    imaging noise, inter-patient diversity, and dataset limitations.
+    Despite these challenges, the proposed model achieves
+    near-perfect recall across all classes on the test dataset.
 
-      In medical screening and radiological diagnostics,
-      Recall is critically important,as missing a brain tumor (false negative) 
-      can delay treatment and significantly impact patient outcomes.
-
-
-      Although an ideal Recall value is close to 100%,
-      achieving perfect Recall in MRI-based tumor detection is challenging due to
-      tumor morphology variations, imaging noise, inter-patient diversity,
-      and practical dataset limitations.
-
-
-       Overall, the achieved Recall values suggest that the model is
-       well-suited for assistive clinical screening,
-       where prioritizing tumor detection over false alarms is essential.
-
+Overall, the achieved Recall values suggest that the model is
+well-suited for assistive clinical screening,
+where prioritizing tumor detection over false alarms
+is essential.
