@@ -348,9 +348,46 @@ If you would like to contribute to this Project, please follow these steps:
         Suggestions for improvements, bug fixes, documentation enhancements,
                     and feature ideas are always welcome.😊
 
-   
-    # Thanks Section 🙏
-    _____________________
+# Model Comparison: EfficientNet-B3 vs Xception
+_____________________________________________________________________
+
+> Initially, the model was trained using EfficientNet-B3.
+> where it achieved an overall test accuracy of approximately 87%.
+> Although EfficientNet-B3 is a strong and lightweight architecture. 
+> its performance was limited in capturing the fine-grained structural.
+> variations present in MRI brain tumor images.
+
+> To improve performance, the model was later retrained using the Xception architecture,
+> which resulted in a significantly higher test accuracy of approximately 98%.
+ 
+##  Why did Xception perform better?
+
+    The improvement in accuracy can be attributed 
+    to the architectural differences between the two models:
+
+- Xception uses depthwise separable convolutions.
+- which allow the model to learn spatial features. 
+- and channel-wise features independently.
+- This is particularly effective for MRI scans. 
+- where subtle texture and boundary differences are critical.
+
+- Brain tumor classes often share similar visual patterns, 
+- and Xception is better at capturing fine-grained tumor 
+- morphology compared to EfficientNet-B3.
+
+- EfficientNet-B3 is optimized for parameter efficiency.
+- and general-purpose image classification, 
+- whereas Xception provides stronger feature disentanglement,
+- making it more suitable for medical imaging tasks.
+
+- The improved feature extraction capability of Xception led to better.
+- class separation, resulting in higher accuracy and more reliable predictions.
+
+       THAT  TARINED FILE IS AVAILABLE IN THIS REPO AND THEIR MATRICS TOO
+        
+
+# Thanks Section 🙏
+ _____________________
    
          Thanks to my super senior Vishwas Mishra(Rolls Royce), who keeps motivating me
                    and continuously helps me to improve my skills.” ❤️
