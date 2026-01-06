@@ -272,7 +272,7 @@ _____________________________
                                                |_________________________________________________|
                                                
 
-## Training Strategy (EfficientNet-B3) :
+## Training Strategy (Xception) :
 
      ┌────────────────────────────────┐      ┌────────────────────────────────┐
      │   Load Xception Backbone       │────▶ │   Load ImageNet Weights        │
